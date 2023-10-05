@@ -1,5 +1,5 @@
 <script class="zone-element-tpl" type="text/html">
-    <div class="zone" data-zone="{{ uid }}" style="
+    <div id="zone-{{ uid }}" class="zone" data-zone="{{ uid }}" style="
         top:{{ y_percent }}%;
         left:{{ x_percent }}%;
         width:{{ width_percent }}%;
@@ -10,7 +10,7 @@
 </script>
 
 <script class="zone-input-tpl" type="text/html">
-    <fieldset class="zone-row" data-uid="{{zone.uid}}">
+    <fieldset id="fieldset-{{zone.uid}}" class="zone-row" data-uid="{{zone.uid}}">
         <button type="button" class="btn remove-zone hidden" title="{{i18n 'Remove zone'}}">
             <span class="icon remove" aria-hidden="true"></span>
         </button>

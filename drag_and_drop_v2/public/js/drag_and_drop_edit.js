@@ -457,6 +457,7 @@ function DragAndDropEditBlock(runtime, element, params) {
                                         align: zoneObj.align
                                     })
                                 );
+                                _fn.build.form.zone.generateDragableResizable(zoneObj);
                             });
                         },
                         changedInputHandler: function(ev) {
@@ -593,7 +594,34 @@ function DragAndDropEditBlock(runtime, element, params) {
                             // Make sure "Display label names on the image" is checked.
                             _fn.data.displayLabels = true;
                             $('.display-labels-form input', element).prop('checked', true);
-                        }
+                        },
+                        generateDragableResizable: function(zone) {
+                            var record = _fn.build.form.zone.getZoneObjByUID(String(zone.uid));
+                            $("#zone-"+zone.uid)
+                            .draggable({ 
+                                containment: "#containment-wrapper", 
+                                scroll: false,
+                                drag: function( event, ui ) {
+                                    drag_x = $("#fieldset-"+zone.uid+" .zone-x").val(ui.position.left);
+                                    drag_y = $("#fieldset-"+zone.uid+" .zone-y").val(ui.position.top);
+
+                                    record.x = ui.position.left;
+                                    record.y = ui.position.top;
+                                }
+                            })
+                            .resizable(
+                                {
+                                resize: function( event, ui ) {
+                                    drag_width = $("#fieldset-"+zone.uid+" .zone-width").val(ui.size.width);
+                                    drag_height = $("#fieldset-"+zone.uid+" .zone-height").val(ui.size.height);
+
+                                    record.width = ui.size.width;
+                                    record.height = ui.size.height;
+                                }
+                            }
+                            );
+
+                        },
                     },
                     createCheckboxes: function(selectedZones) {
                         var template = _fn.tpl.zoneCheckbox;

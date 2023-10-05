@@ -37,7 +37,7 @@
     box-pack:center;
     box-align:center;
 
-    border: 1px dotted #565656;
+    border: 5px dotted #ccc;
     box-sizing: border-box;
 }
 
@@ -49,6 +49,7 @@
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
+    color: #fff;
 }
 
 /** Builder **/

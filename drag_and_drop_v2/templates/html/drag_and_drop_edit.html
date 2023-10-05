@@ -27,7 +27,7 @@
                         <select class="problem-mode" aria-describedby="problem-mode-description-{{id_suffix}}">
                             {% for field_value in fields.mode.values %}
                                 <option value="{{ field_value.value }}" {% if self.mode == field_value.value %}selected{% endif %}>
-                                    {{  field_value.display_name }}
+                                    {% trans field_value.display_name %}
                                 </option>
                             {% endfor %}
                         </select>
@@ -54,7 +54,7 @@
                         <select class="showanswer" aria-describedby="showanswer-description-{{id_suffix}}">
                             {% for field_value in fields.showanswer.values %}
                                 <option value="{{ field_value.value }}" {% if self.showanswer == field_value.value %}selected{% endif %}>
-                                    {{ field_value.display_name }}
+                                    {% trans field_value.display_name %}
                                 </option>
                             {% endfor %}
                         </select>
@@ -226,7 +226,7 @@
                             {% trans "Add a zone" %}
                         </button>
                     </div>
-                    <div class="target">
+                    <div id="containment-wrapper" class="target">
                         <img class="target-img">
                         <div class="zones-preview">
                         </div>
