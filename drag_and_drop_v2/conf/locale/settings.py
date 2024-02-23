@@ -78,6 +78,7 @@ LANGUAGES = [
     ('pt_PT', 'Portuguese (Portugal)'),
     ('ru', 'Russian'),
     ('tr', 'Turkish'),
+    ('vi', 'Vietnamese'),
     ('zh_CN', 'Chinese (China)'),
 ]
 

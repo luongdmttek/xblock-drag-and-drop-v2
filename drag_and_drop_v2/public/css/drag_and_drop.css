@@ -62,12 +62,16 @@
     margin-bottom: 1.41575em;
 }
 
+.xblock--drag-and-drop .problem-header {
+    margin-bottom: 0.5em;
+}
+
 /* Shared styles used in header and footer */
 
 .xblock--drag-and-drop .title1 {
     color: #555555;
-    text-transform: uppercase;
-    font-weight: bold;
+    /* text-transform: uppercase; */
+    /* font-weight: bold; */
     font-style: normal;
     margin: 10px 0;
     margin-top: 20px;
@@ -262,7 +266,8 @@
 }
 
 .xblock--drag-and-drop .drag-container .option.fade {
-    opacity: 0.80;
+    opacity: 0.7;
+    font-weight: bold;
 }
 
 /*** DROP TARGET ***/
@@ -276,7 +281,7 @@
     height: auto;
     position: relative;
     margin-top: 1%;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .xblock--drag-and-drop .target-img-wrapper {
